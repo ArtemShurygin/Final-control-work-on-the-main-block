@@ -27,18 +27,22 @@ if (int.TryParse (input, out int number)) {
 
     Console.WriteLine();
     Console.WriteLine("Исходный массив: ");
-    for (int i=0; i<n; ++i) {
-        Console.WriteLine(input_array [i]);
-    }
-
+    PrintArray(input_array, n);
     Console.WriteLine();
+    
     if (j==0)
         Console.WriteLine("Нет строк, длина которых меньше, либо равна 3 символам: ");
     else {
         Console.WriteLine("Строки, длина которых меньше, либо равна 3 символам: ");
-        for (int i=0; i<j; i++) 
-        Console.WriteLine(output_array [i]);
+         PrintArray(output_array, j);
     }
 }
 else 
     Console.WriteLine("Ошибка: в параметре \"Количество элементов (строк)\" задано не число, а иной символ");
+
+void PrintArray(string[] array, int l)
+    {
+    for (int i=0; i<l; ++i) {
+        Console.WriteLine(array [i]);
+    }
+    }
