@@ -10,8 +10,8 @@ int n = 0;
 
 Console.WriteLine("Введите количество элементов (строк):");
 string input = Convert.ToString(Console.ReadLine());
+Console.WriteLine();
 if (int.TryParse (input, out int number)) {
-    Console.WriteLine();
     n = Convert.ToInt32(input);
     string [] input_array = new string [n];
     string [] output_array = new string [n];
@@ -32,18 +32,13 @@ if (int.TryParse (input, out int number)) {
     }
 
     Console.WriteLine();
-    if (j==0) {
+    if (j==0)
         Console.WriteLine("Нет строк, длина которых меньше, либо равна 3 символам: ");
-    }
     else {
         Console.WriteLine("Строки, длина которых меньше, либо равна 3 символам: ");
         for (int i=0; i<j; i++) 
         Console.WriteLine(output_array [i]);
     }
-
 }
-else {
-    Console.WriteLine();
+else 
     Console.WriteLine("Ошибка: в параметре \"Количество элементов (строк)\" задано не число, а иной символ");
-}
-
