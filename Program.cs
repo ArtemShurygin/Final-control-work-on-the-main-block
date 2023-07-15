@@ -6,13 +6,14 @@
 */
 
 int j = 0;
-int n = 0;
+int n = -1;
 
 Console.WriteLine("Введите количество элементов (строк):");
 string input = Convert.ToString(Console.ReadLine());
 Console.WriteLine();
-if (int.TryParse (input, out int number)) {
+if (int.TryParse (input, out int number)) 
     n = Convert.ToInt32(input);
+if (n > 0) {
     string [] input_array = new string [n];
     string [] output_array = new string [n];
 
@@ -29,7 +30,7 @@ if (int.TryParse (input, out int number)) {
     Console.WriteLine("Исходный массив: ");
     PrintArray(input_array, n);
     Console.WriteLine();
-    
+
     if (j==0)
         Console.WriteLine("Нет строк, длина которых меньше, либо равна 3 символам: ");
     else {
@@ -38,7 +39,7 @@ if (int.TryParse (input, out int number)) {
     }
 }
 else 
-    Console.WriteLine("Ошибка: в параметре \"Количество элементов (строк)\" задано не число, а иной символ");
+    Console.WriteLine("Ошибка: в параметре \"Количество элементов (строк)\" задано не число, а иной символ или количество строк <1");
 
 void PrintArray(string[] array, int l)
     {
